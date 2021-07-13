@@ -1,9 +1,9 @@
 # Fix_E_Sort
-Allows part numbers with the format *[number]*E*[number]* to be sorted in Excel as alphanumeric strings instead of numbers.
+Allows part numbers with the format [number]E[number] to be sorted in Excel as alphanumeric strings, rather than numbers in scientific/exponential notation.
 
 ------------------------------------------------
 
-Excel reads part numbers like "9E12" as a numeric value using scientific notation.
+Excel reads part numbers like "9E12" as a numeric value using scientific notation (in this case, it reads 9E12 as 9000000000000, or 9 with 12 zeroes).
 
 This is a problem when sorting a list, as numbers like "9E12" will be sorted as numbers rather than alphanumerically - e.g. a sorted list might look like:
 
