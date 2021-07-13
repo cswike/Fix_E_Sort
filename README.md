@@ -11,7 +11,7 @@ This is a problem when sorting a list, as strings like "9E12" will be sorted as 
 
 where we really want the 9E12 to come after 9D12.
 
-While you can tell Excel to treat this as text by either A.) prepending a single apostrophe ' or B.) formatting the cell/range containing your alphanumeric strings to Text, I found that this does not apply to sorting the data - Excel will still sort 9E12 together with the other numbers, even when you tell it otherwise. 
+While you can tell Excel to treat this as text by either A.) prepending a single apostrophe, i.e. '9E12 or B.) formatting the cell/range containing your alphanumeric strings to Text, I found that this does not apply to sorting the data - Excel will still sort 9E12 together with the other numbers, even when you tell it otherwise. 
 
 This macro adds a helper column for sorting, and appends a single parenthesis ( after the E for part numbers with this format.
 Since ( is a special character, it gets sorted before any numbers or letters, and this also forces Excel to read it as a string instead of a number in E-notation.
