@@ -5,13 +5,15 @@ Allows part numbers with the format [number]E[number] to be sorted in Excel as a
 
 Excel reads part numbers like "9E12" as a numeric value using scientific notation (in this case, it reads 9E12 as 9000000000000, or 9 with 12 zeroes).
 
-This is a problem when sorting a list, as numbers like "9E12" will be sorted as numbers rather than alphanumerically - e.g. a sorted list might look like:
+This is a problem when sorting a list, as strings like "9E12" will be sorted as numbers rather than alphanumerically - e.g. a sorted list might look like:
 
 {1, 900, 9E12, 9A12, 9B12, 9C12, 9D12, 9F12}
 
 where we really want the 9E12 to come after 9D12.
 
-This macro adds a helper column and appends a single parenthesis ( after the E for part #s with this format.
+While you can tell Excel to treat this as text by either A.) prepending a single apostrophe ' or B.) formatting the cell/range containing your alphanumeric strings to Text, I found that this does not apply to sorting the data - Excel will still sort 9E12 together with the other numbers, even when you tell it otherwise. 
+
+This macro adds a helper column for sorting, and appends a single parenthesis ( after the E for part numbers with this format.
 Since ( is a special character, it gets sorted before any numbers or letters, and this also forces Excel to read it as a string instead of a number in E-notation.
 Also, ( doesn't have any mathematical operations assigned to it, so it should be safe to use.
 
